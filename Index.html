@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MYTHIC.CPM</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  background: #080808;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+h1 {
+  color: #ff2020;
+  text-align: center;
+}
+.card {
+  background: #191919;
+  border: 1px solid #8b0000;
+  border-radius: 14px;
+  padding: 18px;
+  margin: 12px 0;
+}
+button {
+  background: #b50000;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 16px;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+button:active {
+  background: #ff3030;
+}
+#result {
+  padding: 12px;
+  color: #ff7777;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<h1>🔴 MYTHIC.CPM</h1>
+<p>Welcome to your control center</p>
+
+<div class="card">
+  <h2>🚗 Garage</h2>
+  <button onclick="show('Garage')">
+    Open Garage
+  </button>
+</div>
+
+<div class="card">
+  <h2>🔧 Tuning Presets</h2>
+  <button onclick="show('Drift Setup')">Drift</button>
+  <button onclick="show('Drag Setup')">Drag</button>
+  <button onclick="show('Racing Setup')">Racing</button>
+  <button onclick="show('Street Setup')">Street</button>
+</div>
+
+<div class="card">
+  <h2>🎨 Colours</h2>
+  <button onclick="show('Paint Presets')">
+    Paint Presets
+  </button>
+</div>
+
+<div class="card">
+  <h2>⚙️ Settings</h2>
+  <button onclick="show('Settings')">
+    Open Settings
+  </button>
+</div>
+
+<p id="result"></p>
+
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script>
+const tg = window.Telegram?.WebApp;
+
+if (tg) {
+  tg.ready();
+  tg.expand();
+}
+
+function show(name) {
+  document.getElementById("result").textContent =
+    "Selected: " + name;
+}
+</script>
+
+</body>
+</html>
